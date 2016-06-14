@@ -1,0 +1,174 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zenith Insurance</title>
+<!-- Include jQuery Mobile stylesheets -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<!-- Include the jQuery library -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include the jQuery Mobile library -->
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+<script> 
+  
+  document.addEventListener("deviceready", onDeviceReady, false);
+
+
+function onDeviceReady() {
+    document.addEventListener("backbutton", onBackKeyDown, false);
+}
+
+function onBackKeyDown() {
+    var exitpage =confirm("Are you sure you want to quit?");
+    if (exitpage==true)
+  {
+ navigator.app.exitApp();
+}
+
+}
+</script>
+
+<script>
+$(document).ready(function(){
+	
+		function onLoad()
+            {
+                  document.addEventListener("deviceready", onDeviceReady, true);
+                   
+            }
+
+    
+     document.addEventListener("offline", function(){ alert("Zenith Insurance App Requires Internet") }, false);
+
+
+	$('#content').load('inner_home.html');
+	$('.state').hide();	
+	
+	$('#content').bind("swiperight",'#content', function(){
+		$('#zenith-panel').panel("open");
+	}); 
+	$('#content').bind("swipeleft", function(){
+		$('#zenith-panel').panel("close");
+	});
+
+	$('#zenith-panel').on('click', '.all-merchants', function() {
+	$('#zenith-panel').panel("close");//close menu
+	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
+	$('#content').load('all-merchant.html');
+	$('.state').show();
+		return false;
+	});
+	
+	$('#content').on('click', '.mer-cat-store', function() {
+	$('#zenith-panel').panel("close");//close menu
+	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
+		$('#content').load('store.html');
+		$('.state').show();
+		return false;
+	});
+	
+	$('#zenith-panel').on('click', '.faq', function() {
+	$('#zenith-panel').panel("close");//close menu
+	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
+		$('#content').load('faqs.html');
+		$('.state').hide();
+		return false;
+	});
+	
+	$('#zenith-panel').on('click', '.about', function() {
+	$('#zenith-panel').panel("close");//close menu
+	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
+		$('#content').load('about.html');
+		$('.state').hide();
+		return false;
+	});
+	
+	$('#zenith-panel').on('click', '.notification-icon', function() {
+	$('#zenith-panel').panel("close");//close menu
+	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
+		$('#content').load('notification.html');
+		$('.state').hide();
+		return false;
+	});
+	
+	
+	$('#zenith-panel').on('click', '.side-link', function() {
+		id = $(this).attr('id');
+		//alert(id);
+		$('#zenith-panel').panel("close");//close menu
+		$('.state').show();
+		$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
+		$.ajax({
+									type: "GET",
+									url: "store.html",
+									data: {id:id},
+																		
+									success: function(msg){
+									if (msg.success == false) {
+									alert("There was an error submitting the form. Please try again.");
+									} else {
+									$('#content').html(msg);	
+										
+									}
+													
+									}
+									
+								});
+		return false;
+		
+		
+	});
+		
+	});
+			 
+    
+</script>
+ <link rel="stylesheet" href="css/zenith.css" />
+</head>
+<body>
+<div data-role="page" data-theme="d">
+<div data-role="panel" id="zenith-panel" data-position-fixed="true" data-display="push">
+<ul class="li-links" data-role="listview">
+<div><img src="images/icon/notification.png" class="notification-icon"/></div>
+<li class="all-merchants">ALL MERCHANTS</li>
+<li class="side-link">RETAIL<img src="images/icon/red-retail.png" class="ui-li-icon"></li>
+<li class="side-link">BEAUTY<img src="images/icon/red-beauty.png" class="ui-li-icon"></li>
+<li class="side-link">FASHION<img src="images/icon/red-fashion.png" class="ui-li-icon"></li>
+<li class="side-link">BARS &amp; LOUNGE<img src="images/icon/red-bar.png" class="ui-li-icon"></li>
+<li class="side-link">HEALTH CARE<img src="images/icon/red-healthcare.png" class="ui-li-icon"></li>
+<li class="side-link">HOSPITALITY<img src="images/icon/red-hospitality.png" class="ui-li-icon"></li>
+<li class="side-link">AUTOMOBILE<img src="images/icon/red-automobile.png" class="ui-li-icon"></li>
+<li class="red-side-link">WPP</li>
+<li class="red-side-link faq">FAQs</li>
+<li class="red-side-link about">ABOUT</li>
+<li class="red-side-link">EXIT</li>
+</ul>
+</div>
+<div data-role="header" data-position="fixed" id="header" style="border:hidden;">
+<a href="#zenith-panel" class="hide" style="border:hidden;"><img src="images/icon/menu.png" class="menu-icon"/></a>
+<div class="state">
+<select class="dp-state">
+<option>Select State</option>
+<option>LAGOS</option>
+<option>ABUJA</option>
+<option>PHC</option>
+</select>
+</div>
+<img src="images/stripe.png" class="stripe"/>
+</div>
+<div data-role="content" id="content" style="border:hidden;">
+</div>
+<div data-role="footer" id="footer" style="border:hidden;">
+
+</div>
+
+</div>
+</body>
+</html>

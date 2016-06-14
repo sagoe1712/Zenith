@@ -3,6 +3,9 @@
 /*.hide{
 	z-index:-20;
 }*/
+.about-pg{
+	padding:0px 5px;
+}
 .notification-desc {
 	background-color:#F1F1F2;
 }
@@ -363,7 +366,7 @@ body {
 .content-inner{
 	margin:0px;
 	margin-top:0px;
-	padding-top:30px;
+	padding-top:15px;
 	max-width:100%;
 	background-color:#F1F1F2;
 }

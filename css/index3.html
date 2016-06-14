@@ -4,16 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zenith Insurance</title>
 <!-- Include jQuery Mobile stylesheets -->
-<link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
 <!-- Include the jQuery library -->
-<script src="js/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!-- Include the jQuery Mobile library -->
-<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-
-<link rel="stylesheet" href="css/font-awesome.min.css">
 
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
 <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -40,12 +38,6 @@ function onBackKeyDown() {
 <script>
 $(document).ready(function(){
 	
-	$( document ).bind( "mobileinit", function() {
-    // Make your jQuery Mobile framework configuration changes here!
-
-    $.mobile.allowCrossDomainPages = true;
-});
-	
 		function onLoad()
             {
                   document.addEventListener("deviceready", onDeviceReady, true);
@@ -56,8 +48,7 @@ $(document).ready(function(){
      document.addEventListener("offline", function(){ alert("Zenith Insurance App Requires Internet") }, false);
 
 
-	$('#content').load('inner_home.html');
-	$('.state').hide();	
+	$('#content').load('inner_home.html');	
 	
 	$('#content').bind("swiperight",'#content', function(){
 		$('#zenith-panel').panel("open");
@@ -69,16 +60,7 @@ $(document).ready(function(){
 	$('#zenith-panel').on('click', '.all-merchants', function() {
 	$('#zenith-panel').panel("close");//close menu
 	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
-	$('#content').load('all-merchant.html');
-	$('.state').show();
-		return false;
-	});
-	
-	$('#content').on('click', '.mer-cat-store', function() {
-	$('#zenith-panel').panel("close");//close menu
-	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
-		$('#content').load('store.html');
-		$('.state').show();
+		$('#content').load('category.html');
 		return false;
 	});
 	
@@ -86,7 +68,6 @@ $(document).ready(function(){
 	$('#zenith-panel').panel("close");//close menu
 	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
 		$('#content').load('faqs.html');
-		$('.state').hide();
 		return false;
 	});
 	
@@ -94,24 +75,13 @@ $(document).ready(function(){
 	$('#zenith-panel').panel("close");//close menu
 	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
 		$('#content').load('about.html');
-		$('.state').hide();
 		return false;
 	});
-	
-	$('#zenith-panel').on('click', '.notification-icon', function() {
-	$('#zenith-panel').panel("close");//close menu
-	$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
-		$('#content').load('notification.html');
-		$('.state').hide();
-		return false;
-	});
-	
 	
 	$('#zenith-panel').on('click', '.side-link', function() {
 		id = $(this).attr('id');
 		//alert(id);
 		$('#zenith-panel').panel("close");//close menu
-		$('.state').show();
 		$('#content').html('<img style="text-align:center; padding-top 50%; padding-bottom:50%;" src="images/loading.gif" />');
 		$.ajax({
 									type: "GET",
@@ -159,19 +129,12 @@ $(document).ready(function(){
 <li class="red-side-link">EXIT</li>
 </ul>
 </div>
+
 <div data-role="header" data-position="fixed" id="header" style="border:hidden;">
-<a href="#zenith-panel" class="hide" style="border:hidden;"><i class="fa fa-bars fa-3x" style="color:#fff;"></i></a>
-<div class="state">
-<select class="dp-state">
-<option>Select State</option>
-<option>LAGOS</option>
-<option>ABUJA</option>
-<option>PHC</option>
-</select>
-</div>
+<a href="#zenith-panel" class="hide" style="border:hidden;"><img src="images/icon/menu.png" class="menu-icon"/></a>
 <img src="images/stripe.png" class="stripe"/>
 </div>
-<div data-role="content" id="content" style="border:hidden;">
+<div data-role="content" id="content" style="border:hidden;>
 </div>
 <div data-role="footer" id="footer" style="border:hidden;">
 

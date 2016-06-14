@@ -3,10 +3,10 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.lsl.visa"
+        id        = "com.lsl.zenithinsurance"
         version   = "1.0.0">
 
-    <name>Visa</name>
+    <name>Zenith Insurance Loyalty</name>
 
     <description>
         Zenith Insurance loyalty is a lifestyle app that connects you to partners around the world offering you discounts and gift

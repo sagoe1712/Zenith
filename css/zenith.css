@@ -19,7 +19,7 @@ button.not-accordion:after {
     font-size: 12px;
     float: right;
 	padding:5px;
-    margin-left: 150px;
+    margin-left: 100px;
 	content:"\25b6";
 	position:absolute;
 	margin-top:-60px;
@@ -36,17 +36,11 @@ button.not-accordion.active:after {
 .state{
 	margin-left:100px;
 	width:29%;
-	border:hidden !important;
+	
 	z-index: 1;
-	background-color:#fff;
 }
 
 .dp-state{
-	border:hidden !important;
-	height:15px;
-	background-color:#fff;
-	color:#000;
-	
 }
 .col-3{
 	background-color:#fff;
@@ -181,19 +175,17 @@ button.accordion.active, button.accordion:hover {
 }
 
 button.accordion:after {
-    content: '\02795';
-	background-color:#C3232D;
-    font-size: 13px;
-    color: #fff;
+   content:"\25b6";
+ color:#C3232D;
+    font-size: 12px;
     float: right;
-	padding:5px;
+	padding:10px;
     margin-left: 5px;
 }
 
 button.accordion.active:after {
-    content: "\2796";
-	background-color:#C3232D;
-	color:#fff;
+    content:"\25bc";
+	color:#C3232D;
 }
 
 div.panel {
@@ -360,7 +352,9 @@ hr{
 	font-style:normal;
 }
 
-
+.store-hours{
+	float:right;
+}
 
 body {
 	margin: 0;
@@ -372,7 +366,7 @@ body {
 .content-inner{
 	margin:0px;
 	margin-top:0px;
-	padding-top:15px;
+	padding-top:5px;
 	max-width:100%;
 	background-color:#F1F1F2;
 }

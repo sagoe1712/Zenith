@@ -68,7 +68,7 @@ button.not-accordion.active:after {
 	z-index: 1;
 }
 
-.dp-state{
+.dp-state, .ui-select{
 	border-color:#fff;
 	background-color:#fff;
 }

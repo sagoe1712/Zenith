@@ -68,7 +68,7 @@ $(document).ready(function(){
 
 	$('#zenith-panel').on('click', '.all-merchants', function() {
 	$('#zenith-panel').panel("close");//close menu
-	$('#content').html('<div style="width:100%;"><img src="images/loading.gif" /></div>');
+	$('#content').html('<div style="width:100%; text-align:center;"><img src="images/loading.gif" /></div>');
 	$('#content').load('all-merchant.html');
 	$('.state').show();
 		return false;
@@ -76,7 +76,7 @@ $(document).ready(function(){
 	
 	$('#content').on('click', '.mer-cat-store', function() {
 	$('#zenith-panel').panel("close");//close menu
-	$('#content').html('<div style="width:100%;"><img src="images/loading.gif" /></div>');
+	$('#content').html('<div style="width:100%; text-align:center;"><img src="images/loading.gif" /></div>');
 		$('#content').load('store.html');
 		$('.state').show();
 		return false;
@@ -84,7 +84,7 @@ $(document).ready(function(){
 	
 	$('#zenith-panel').on('click', '.faq', function() {
 	$('#zenith-panel').panel("close");//close menu
-	$('#content').html('<div style="width:100%;"><img src="images/loading.gif" /></div>');
+	$('#content').html('<div style="width:100%; text-align:center;"><img src="images/loading.gif" /></div>');
 		$('#content').load('faqs.html');
 		$('.state').hide();
 		return false;
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	
 	$('#zenith-panel').on('click', '.about', function() {
 	$('#zenith-panel').panel("close");//close menu
-	$('#content').html('<div style="width:100%;"><img src="images/loading.gif" /></div>');
+	$('#content').html('<div style="width:100%; text-align:center;"><img src="images/loading.gif" /></div>');
 		$('#content').load('about.html');
 		$('.state').hide();
 		return false;
@@ -100,7 +100,7 @@ $(document).ready(function(){
 	
 	$('#zenith-panel').on('click', '.home-icon', function() {
 	$('#zenith-panel').panel("close");//close menu
-	$('#content').html('<div style="width:100%;"><img src="images/loading.gif" /></div>');
+	$('#content').html('<div style="width:100%; text-align:center;"><img src="images/loading.gif" /></div>');
 		$('#content').load('inner_home.html');
 		$('.state').hide();
 		return false;
@@ -108,9 +108,16 @@ $(document).ready(function(){
 	
 	$('#zenith-panel').on('click', '.notification-icon', function() {
 	$('#zenith-panel').panel("close");//close menu
-	$('#content').html('<div style="width:100%;"><img src="images/loading.gif" /></div>');
+	$('#content').html('<div style="width:100%; text-align:center;"><img src="images/loading.gif" /></div>');
 		$('#content').load('notification.html');
 		$('.state').hide();
+		return false;
+	});
+	
+	$('#zenith-panel').on('click', '#wpp', function() {
+	$('#zenith-panel').panel("close");//close menu
+	var url = 'https://zenithinsurance.worldprivilegeplus.com';
+    window.open(url, '_system');
 		return false;
 	});
 	
@@ -120,7 +127,7 @@ $(document).ready(function(){
 		//alert(id);
 		$('#zenith-panel').panel("close");//close menu
 		$('.state').show();
-		$('#content').html('<div style="width:100%;"><img src="images/loading.gif" /></div>');
+		$('#content').html('<div style="width:100%; text-align:center;"><img src="images/loading.gif" /></div>');
 		$.ajax({
 									type: "GET",
 									url: "store.html",
@@ -161,7 +168,7 @@ $(document).ready(function(){
 <li class="side-link">HEALTH CARE<img src="images/icon/red-healthcare.png" class="ui-li-icon"></li>
 <li class="side-link">HOSPITALITY<img src="images/icon/red-hospitality.png" class="ui-li-icon"></li>
 <li class="side-link">AUTOMOBILE<img src="images/icon/red-automobile.png" class="ui-li-icon"></li>
-<li class="red-side-link">WPP</li>
+<li class="red-side-link" id="wpp">WPP</li>
 <li class="red-side-link faq">FAQs</li>
 <li class="red-side-link about">ABOUT</li>
 <li class="red-side-link">EXIT</li>

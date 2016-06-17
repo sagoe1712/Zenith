@@ -68,7 +68,7 @@ button.not-accordion.active:after {
 	z-index: 1;
 }
 
-.dp-state, .ui-select{
+.dp-state, .ui-select, .ui-btn-up-c, state{
 	border-color:#fff;
 	background-color:#fff;
 }
@@ -396,7 +396,7 @@ body {
 .content-inner{
 	margin:0px;
 	margin-top:0px;
-	padding-top:5px;
+	padding-top:0px;
 	max-width:100%;
 	background-color:#F1F1F2;
 }

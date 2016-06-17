@@ -343,7 +343,7 @@ hr{
 }
 .stripe{
 	max-width:100%;
-	z-index:2;
+	z-index:10;
 	position:fixed !important;
 	margin-top:17%;
 }

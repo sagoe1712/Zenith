@@ -56,7 +56,7 @@ $(document).ready(function(){
      document.addEventListener("offline", function(){ alert("Zenith Insurance App Requires Internet") }, false);
 
 
-	$('#content').load('inner_home.html');
+	$('#content').load('merchant.html');
 	$('.state').hide();	
 	
 	$('#content').bind("swiperight",'#content', function(){
@@ -101,7 +101,7 @@ $(document).ready(function(){
 	$('#zenith-panel').on('click', '.home-icon', function() {
 	$('#zenith-panel').panel("close");//close menu
 	$('#content').html('<div style="width:100%; text-align:center; padding-top:20%;"><img src="images/loading.gif" /></div>');
-		$('#content').load('inner_home.html');
+		$('#content').load('mercahant.html');
 		$('.state').hide();
 		return false;
 	});
@@ -118,7 +118,8 @@ $(document).ready(function(){
 	$('#zenith-panel').panel("close");//close menu
 	$('#content').html('<div style="width:100%; text-align:center; padding-top:20%;"><img src="images/loading.gif" /></div>');
 	var url = 'https://zenithinsurance.worldprivilegeplus.com';
-    window.open(url, '_system');
+	navigator.app.loadUrl(url, {openExternal:true});
+   /* window.open(url, '_system');*/
 		return false;
 	});
 	
@@ -162,13 +163,13 @@ $(document).ready(function(){
 <ul class="li-links" data-role="listview">
 <div><img src="images/icon/home.png" class="home-icon"/><img src="images/icon/notification.png" class="notification-icon"/></div>
 <li class="all-merchants">ALL MERCHANTS</li>
-<li class="side-link">RETAIL<img src="images/icon/red-retail.png" class="ui-li-icon"></li>
-<li class="side-link">BEAUTY<img src="images/icon/red-beauty.png" class="ui-li-icon"></li>
-<li class="side-link">FASHION<img src="images/icon/red-fashion.png" class="ui-li-icon"></li>
-<li class="side-link">BARS &amp; LOUNGE<img src="images/icon/red-bar.png" class="ui-li-icon"></li>
-<li class="side-link">HEALTH CARE<img src="images/icon/red-healthcare.png" class="ui-li-icon"></li>
-<li class="side-link">HOSPITALITY<img src="images/icon/red-hospitality.png" class="ui-li-icon"></li>
-<li class="side-link">AUTOMOBILE<img src="images/icon/red-automobile.png" class="ui-li-icon"></li>
+<li class="side-link" id="16">RETAIL<img src="images/icon/red-retail.png" class="ui-li-icon"></li>
+<li class="side-link" id="2">BEAUTY<img src="images/icon/red-beauty.png" class="ui-li-icon"></li>
+<li class="side-link" id="1">FASHION<img src="images/icon/red-fashion.png" class="ui-li-icon"></li>
+<li class="side-link" id="4">BARS &amp; LOUNGE<img src="images/icon/red-bar.png" class="ui-li-icon"></li>
+<li class="side-link" id="11">HEALTH CARE<img src="images/icon/red-healthcare.png" class="ui-li-icon"></li>
+<li class="side-link" id="3">HOSPITALITY<img src="images/icon/red-hospitality.png" class="ui-li-icon"></li>
+<li class="side-link" id="5">AUTOMOBILE<img src="images/icon/red-automobile.png" class="ui-li-icon"></li>
 <li class="red-side-link" id="wpp">WPP</li>
 <li class="red-side-link faq">FAQs</li>
 <li class="red-side-link about">ABOUT</li>
@@ -178,7 +179,7 @@ $(document).ready(function(){
 <div data-role="header" data-position="fixed" id="header" style="border:hidden;">
 <a href="#zenith-panel" class="hide" style="border:hidden;"><i class="fa fa-bars fa-2x" style="color:#fff;"></i></a>
 <div class="state">
-<select class="dp-state">
+<select class="dp-state" data-overlay-theme="a" data-icon="arrow-d">
 <option>Select State</option>
 <option>LAGOS</option>
 <option>ABUJA</option>

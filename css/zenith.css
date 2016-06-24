@@ -76,7 +76,6 @@ button.not-accordion.active:after {
     cursor: pointer;
 	width:20%;
 	text-align: center;
-	float:right;
 }
 .col-3{
 	background-color:#fff;

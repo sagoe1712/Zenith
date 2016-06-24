@@ -74,8 +74,9 @@ button.not-accordion.active:after {
     font-size: 16px;
     border: #787878 2px solid;
     cursor: pointer;
-	width:40%;
+	width:20%;
 	text-align: center;
+	float:right;
 }
 .col-3{
 	background-color:#fff;
